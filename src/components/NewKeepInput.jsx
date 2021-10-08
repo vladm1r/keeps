@@ -4,21 +4,15 @@ import 'Styles/newKeepInput.scss';
 
 class NewKeepInput extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			value: ''
-		}
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.createKeep = this.createKeep.bind(this);
+	state = {
+		value: ''
 	}
 
-	handleChange(event) {
+	handleChange = (event) => {
 		this.setState({ value: event.target.value });
 	}
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault();
 		if (this.state.value) {
 			this.createKeep(this.state.value);
@@ -26,7 +20,7 @@ class NewKeepInput extends React.Component {
 		this.setState({ value: '' });
 	}
 
-	createKeep(title) {
+	createKeep = (title) => {
 		let id = title.substr(0, 3) + (new Date).getTime();
 		let keep = {
 			title: title,
