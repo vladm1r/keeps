@@ -42,11 +42,12 @@ const babelOptions = preset => {
 }
 
 const cssMinifyInProd = () => {
-	if (isProd) {
-		return MiniCssExtractPlugin.loader;
-	}
+	return MiniCssExtractPlugin.loader;
+	// if (isProd) {
+	// 	return MiniCssExtractPlugin.loader;
+	// }
 
-	return "style-loader";
+	// return "style-loader";
 }
 
 module.exports = {
@@ -62,6 +63,11 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.ts', '.js', '.jsx'],
+		alias: {
+			Components: path.resolve(__dirname, "src/components/"),
+			Styles: path.resolve(__dirname, "src/styles/"),
+			Assets: path.resolve(__dirname, "src/assets/"),
+		},
 	},
 	optimization: optimization(),
 	devServer: {

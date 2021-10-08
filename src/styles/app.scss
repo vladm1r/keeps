@@ -1,0 +1,26 @@
+@import "~normalize.css";
+@import "roboto.css";
+
+body {
+	font-weight: normal;
+	font-family: "Roboto", sans-serif;
+}
+
+.keeps {
+	padding: 20px;
+	&__head {
+		padding: 20px 0;
+		display: flex;
+		justify-content: center;
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -10px;
+	}
+	&__item {
+		flex: 0 1 12.5%;
+		padding: 10px 10px;
+		list-style-type: none;
+	}
+}
