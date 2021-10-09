@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Notes from './containers/notes/notes';
+import NotesManager from './containers/notes-manager/notes-manager';
 
 class App extends React.Component {
 
 	render() {
 		return (
-			<Notes />
+			<NotesManager />
 		)
 	}
 }

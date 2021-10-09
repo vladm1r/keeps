@@ -5,8 +5,8 @@ import './notes-list.scss';
 
 const NotesList = ({ notesList }) => (
 	<ul className="notes-list">
-		{notesList.map(({ title, id }) => (
-			<NotesItem key={id} id={id} title={title} />
+		{notesList.map(({ text, id }) => (
+			<NotesItem key={id} id={id} text={text} />
 		))}
 	</ul>
 );

@@ -6,15 +6,15 @@ class NotesItem extends React.Component {
 
 
 	state = {
-		title: this.props.title,
-		id: this.props.id
+		id: this.props.id,
+		text: this.props.text,
 	}
 
 	render() {
 		return (
 			<li className="notes-item">
 				<div className="notes-item-body">
-					<h6 className="notes-item-title">{this.props.title}</h6>
+					<h6 className="notes-item-text">{this.props.text}</h6>
 				</div>
 			</li>
 		)

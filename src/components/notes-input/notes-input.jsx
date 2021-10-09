@@ -8,14 +8,27 @@ class NotesInput extends React.Component {
 		value: ''
 	}
 
+	handleInputChange = ({ target: { value } }) => {
+		this.setState({
+			value,
+		})
+	}
+
+	handleSubmit = () => {
+		const id = this.state.value.substr(0, 3) + (new Date()).getTime();
+		this.props.addNote(id, this.state.value);
+		this.setState({ value: '' })
+	}
+
+
 	render() {
 		return (
 			<div className="notes-input">
 				<textarea
 					className="notes-input-textarea"
 					placeholder="Новая заметка..."
-				// onChange={onChange}
-				// value={value}
+					onChange={this.handleInputChange}
+					value={this.state.value}
 				>
 
 				</textarea>
