@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Keeps from './containers/keeps/keeps';
+import Notes from './containers/notes/notes';
 
 class App extends React.Component {
 
 	render() {
 		return (
-			<Keeps />
+			<Notes />
 		)
 	}
 }
