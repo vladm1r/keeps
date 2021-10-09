@@ -1,8 +1,8 @@
 import React from 'react';
 
-import 'Styles/newKeepInput.scss';
+import './keeps-input.scss';
 
-class NewKeepInput extends React.Component {
+class KeepsInput extends React.Component {
 
 	state = {
 		value: ''
@@ -31,19 +31,19 @@ class NewKeepInput extends React.Component {
 
 	render() {
 		return (
-			<div className="newkeep">
+			<div className="keeps-input">
 				<textarea
-					className="newkeep__input"
+					className="keeps-input-textarea"
 					placeholder="Новая заметка..."
 					onChange={this.handleChange}
 					value={this.state.value}
 				>
 
 				</textarea>
-				<button onClick={this.handleSubmit} className="newkeep__btn">создать</button>
+				<button onClick={this.handleSubmit} className="keeps-input-btn">создать</button>
 			</div>
 		)
 	}
 }
 
-export default NewKeepInput;
+export default KeepsInput;

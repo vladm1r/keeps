@@ -1,0 +1,37 @@
+.keeps-input {
+	display: flex;
+	align-items: flex-start;
+}
+
+.keeps-input-textarea {
+	padding: 10px 20px;
+	min-width: 400px;
+	border: 1px solid #000;
+	border-radius: 4px;
+	font-size: 16px;
+	height: 40px;
+	transition: height 0.2s;
+	resize: none;
+	box-sizing: border-box;
+	&:focus {
+		height: 100px;
+	}
+}
+
+.keeps-input-btn {
+	font-size: 14px;
+	min-height: 40px;
+	min-width: 140px;
+	border-radius: 4px;
+	margin: 0px 0px 0px 20px;
+	border: none;
+	cursor: pointer;
+	background: #ffd800;
+	transition: background 0.2s;
+	&:hover {
+		background: #ffcc00;
+	}
+	&:active {
+		background: #ff9f00;
+	}
+}
