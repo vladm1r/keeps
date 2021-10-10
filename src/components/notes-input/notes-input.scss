@@ -6,14 +6,19 @@
 .notes-input-textarea {
 	padding: 10px 20px;
 	min-width: 400px;
-	border: 1px solid #000;
+	// border: 1px solid #000;
+	border: 0;
 	border-radius: 4px;
 	font-size: 16px;
 	height: 40px;
 	transition: height 0.2s;
 	resize: none;
+	-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 	&:focus {
 		height: 100px;
+		outline: unset;
 	}
 }
 

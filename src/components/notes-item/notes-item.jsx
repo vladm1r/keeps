@@ -21,7 +21,12 @@ class NotesItem extends React.Component {
 		return (
 			<li className={className}>
 				<div className="notes-item-body" style={{ backgroundColor: color.color }}>
-					<textarea ref={c => this.textarea = c} className="notes-item-text" onChange={(e) => changeText(id, e.target.value)} defaultValue={text}></textarea>
+					<textarea
+						ref={c => this.textarea = c}
+						className="notes-item-text"
+						onChange={(e) => changeText(id, e.target.value)}
+						defaultValue={text}
+						spellCheck="false"></textarea>
 					<NoteBtn type="note-color-change-btn" title={'цвет'} noteId={id} colorId={colorId} changeColor={changeColor} />
 					<NoteBtn onClick={() => pinNote(id)} type="note-btn-pin" title={isPinned ? 'открепить' : 'закрепить'} />
 					<NoteBtn onClick={() => removeNote(id)} type="note-btn-delete" title={'удалить'} />
