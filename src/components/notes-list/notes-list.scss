@@ -6,3 +6,16 @@
 	justify-content: start;
 	padding: 0;
 }
+
+.notes-list-container {
+	padding-bottom: 60px;
+	&:last-child {
+		padding: 0;
+	}
+}
+
+.notes-list-title {
+	font-size: 16px;
+	margin: 0px 0px 0px 10px;
+	text-transform: uppercase;
+}
