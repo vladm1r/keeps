@@ -50,3 +50,9 @@
 	right: 20px;
 	background: url("../../assets/icons/pin.svg") center/cover no-repeat;
 }
+
+.isPinned {
+	.note-btn-pin {
+		background: url("../../assets/icons/pin-active.svg") center/cover no-repeat;
+	}
+}

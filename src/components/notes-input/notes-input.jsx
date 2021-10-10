@@ -15,9 +15,12 @@ class NotesInput extends React.Component {
 	}
 
 	handleSubmit = () => {
-		const id = this.state.value.substr(0, 3) + (new Date()).getTime();
-		this.props.addNote(id, this.state.value);
-		this.setState({ value: '' })
+		const { value } = this.state;
+		const id = value.substr(0, 3) + (new Date()).getTime();
+		if (value) {
+			this.props.addNote(id, this.state.value);
+			this.setState({ value: '' })
+		}
 	}
 
 

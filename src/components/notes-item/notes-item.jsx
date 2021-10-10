@@ -6,27 +6,6 @@ import NoteBtn from '../note-btn/note-btn';
 import './notes-item.scss'
 
 
-// const NotesItem = ({ id, text, colorId, removeNote, changeColor, pinNote, changeText }) => {
-
-// 	componentDidMount(){
-// 		this.textarea.focus();
-// 		autosize(this.textarea);
-// 	}
-
-// 	const [color] = COLOR_LIST.filter(({ id }) => id === colorId);
-
-// 	return (
-// 		<li className="notes-item">
-// 			<div className="notes-item-body" style={{ backgroundColor: color.color }}>
-// 				<textarea className="notes-item-text" onChange={(e) => changeText(id, e.target.value)} defaultValue={text}></textarea>
-// 				<NoteBtn type="note-color-change-btn" title={'цвет'} noteId={id} colorId={colorId} changeColor={changeColor} />
-// 				<NoteBtn onClick={() => pinNote(id)} type="note-btn-pin" title={'закрепить'} />
-// 				<NoteBtn onClick={() => removeNote(id)} type="note-btn-delete" title={'удалить'} />
-// 			</div>
-// 		</li>
-// 	)
-// }
-
 class NotesItem extends React.Component {
 
 	componentDidMount() {
@@ -35,14 +14,16 @@ class NotesItem extends React.Component {
 	}
 
 	render() {
-		const { id, text, colorId, removeNote, changeColor, pinNote, changeText } = this.props;
+		const { id, text, colorId, removeNote, changeColor, pinNote, changeText, isPinned } = this.props;
 		const [color] = COLOR_LIST.filter(({ id }) => id === colorId);
+		const className = isPinned ? "notes-item isPinned" : "notes-item";
+
 		return (
-			<li className="notes-item">
+			<li className={className}>
 				<div className="notes-item-body" style={{ backgroundColor: color.color }}>
 					<textarea ref={c => this.textarea = c} className="notes-item-text" onChange={(e) => changeText(id, e.target.value)} defaultValue={text}></textarea>
 					<NoteBtn type="note-color-change-btn" title={'цвет'} noteId={id} colorId={colorId} changeColor={changeColor} />
-					<NoteBtn onClick={() => pinNote(id)} type="note-btn-pin" title={'закрепить'} />
+					<NoteBtn onClick={() => pinNote(id)} type="note-btn-pin" title={isPinned ? 'открепить' : 'закрепить'} />
 					<NoteBtn onClick={() => removeNote(id)} type="note-btn-delete" title={'удалить'} />
 				</div>
 			</li>
