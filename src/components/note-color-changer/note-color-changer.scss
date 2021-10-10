@@ -1,0 +1,23 @@
+.note-color-changer {
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	left: 50%;
+	transform: translate(-50%, 0);
+	padding: 10px;
+	background: rgba(0, 0, 0, 0.8);
+	width: 92px;
+	border-radius: 4px;
+	bottom: 30px;
+	cursor: auto;
+	transition: opacity 0.2s;
+	opacity: 0;
+}
+.input-color {
+	flex: 0 0 30px;
+	height: 30px;
+	margin: 3px;
+	border-radius: 50%;
+	background: #fff;
+	cursor: pointer;
+}

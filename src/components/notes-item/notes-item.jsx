@@ -1,24 +1,23 @@
 import React from 'react';
+import { COLOR_LIST } from '../../constants';
+import NoteBtn from '../note-btn/note-btn';
 
 import './notes-item.scss'
 
-class NotesItem extends React.Component {
 
+const NotesItem = ({ id, text, colorId, removeNote }) => {
 
-	state = {
-		id: this.props.id,
-		text: this.props.text,
-	}
+	const [color] = COLOR_LIST.filter(({ id }) => id === colorId);
 
-	render() {
-		return (
-			<li className="notes-item">
-				<div className="notes-item-body">
-					<h6 className="notes-item-text">{this.props.text}</h6>
-				</div>
-			</li>
-		)
-	}
+	return (
+		<li className="notes-item">
+			<div className="notes-item-body" style={{ backgroundColor: color.color }}>
+				<h6 className="notes-item-text">{text}</h6>
+				<NoteBtn onClick={() => removeNote(id)} type="note-btn-delete" title={'удалить'} />
+				<NoteBtn type="note-color-change-btn" title={'цвет'} />
+			</div>
+		</li>
+	)
 }
 
 

@@ -8,6 +8,12 @@
 	padding: 10px 40px 40px 20px;
 	border: 1px solid #1d1d1d;
 	border-radius: 8px;
+	position: relative;
+	&:hover {
+		.note-btn {
+			opacity: 1;
+		}
+	}
 }
 .notes-item-text {
 	font-size: 16px;
@@ -15,4 +21,21 @@
 	font-weight: 400;
 	margin: 0;
 	word-wrap: break-word;
+}
+
+.note-btn-delete {
+	background: url("../../assets/icons/trash.svg") center/cover no-repeat;
+	bottom: 10px;
+	right: 20px;
+}
+
+.note-color-change-btn {
+	left: 20px;
+	bottom: 10px;
+	background: url("../../assets/icons/fill.svg") center/cover no-repeat;
+	&:hover {
+		.note-color-changer {
+			opacity: 1;
+		}
+	}
 }

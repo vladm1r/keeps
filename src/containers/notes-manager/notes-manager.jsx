@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addNote } from '../../actions/actionCreator';
+import { addNote, removeNote } from '../../actions/actionCreator';
 
 import NotesList from '../../components/notes-list/notes-list';
 import NotesInput from '../../components/notes-input/notes-input';
@@ -20,7 +20,7 @@ class NotesManager extends React.Component {
 	}
 
 	render() {
-		const { notes } = this.props;
+		const { notes, removeNote } = this.props;
 		const isNotesExist = notes && notes.length > 0;
 
 		return (
@@ -28,7 +28,7 @@ class NotesManager extends React.Component {
 				<div className="main-input-container">
 					<NotesInput addNote={this.addNote} />
 				</div>
-				{isNotesExist && <NotesList notesList={notes} />}
+				{isNotesExist && <NotesList notesList={notes} removeNote={removeNote} />}
 			</main>
 		)
 	}
@@ -38,5 +38,5 @@ class NotesManager extends React.Component {
 
 export default connect(state => ({
 	notes: state.notesReducer,
-}), { addNote })(NotesManager);
+}), { addNote, removeNote })(NotesManager);
 
