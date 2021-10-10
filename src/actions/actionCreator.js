@@ -1,4 +1,4 @@
-import { ADD_NOTE, REMOVE_NOTE, CHANGE_COLOR, PIN_NOTE } from "../constants"
+import { ADD_NOTE, REMOVE_NOTE, CHANGE_COLOR, PIN_NOTE, CHANGE_TEXT } from "../constants"
 
 export const addNote = (id, text) => ({
 	type: ADD_NOTE,
@@ -18,6 +18,13 @@ export const changeColor = (id, colorId) => ({
 	id,
 	colorId,
 });
+
+export const changeText = (id, text) => ({
+	type: CHANGE_TEXT,
+	id,
+	text,
+});
+
 
 export const pinNote = (id) => ({
 	type: PIN_NOTE,

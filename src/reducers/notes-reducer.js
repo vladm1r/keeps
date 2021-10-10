@@ -1,4 +1,4 @@
-import { ADD_NOTE, REMOVE_NOTE, CHANGE_COLOR, PIN_NOTE } from "../constants"
+import { ADD_NOTE, REMOVE_NOTE, CHANGE_COLOR, PIN_NOTE, CHANGE_TEXT } from "../constants"
 
 const NOTES = [
 	{
@@ -32,6 +32,13 @@ const notesReducer = (state = NOTES, { id, text, colorId, type, isPinned }) => {
 			return [...state].map(note => {
 				if (note.id === id) {
 					note.colorId = colorId;
+				}
+				return note;
+			});
+		case CHANGE_TEXT:
+			return [...state].map(note => {
+				if (note.id === id) {
+					note.text = text;
 				}
 				return note;
 			});

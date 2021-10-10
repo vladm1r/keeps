@@ -24,7 +24,13 @@
 	line-height: 120%;
 	font-weight: 400;
 	margin: 0;
-	word-wrap: break-word;
+	background: none;
+	border: none;
+	resize: none;
+	&:focus {
+		border: none;
+		outline: none;
+	}
 }
 
 .note-btn-delete {

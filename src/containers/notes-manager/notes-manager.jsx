@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addNote, removeNote, changeColor, pinNote } from '../../actions/actionCreator';
+import { addNote, removeNote, changeColor, pinNote, changeText } from '../../actions/actionCreator';
 
 import NotesSeparator from '../../components/notes-separator/notes-separator';
 import NotesInput from '../../components/notes-input/notes-input';
@@ -24,20 +24,25 @@ class NotesManager extends React.Component {
 		changeColor(id, colorId);
 	}
 
+	changeColor = (id, text) => {
+		const { changeText } = this.props;
+		changeText(id, text);
+	}
+
 	pinNote = (id) => {
-		const { changeColor } = this.props;
+		const { pinNote } = this.props;
 		pinNote(id);
 	}
 
 	render() {
-		const { notes, removeNote, changeColor, pinNote } = this.props;
+		const { notes, removeNote, changeColor, pinNote, changeText } = this.props;
 
 		return (
 			<main className="main">
 				<div className="main-input-container">
 					<NotesInput addNote={this.addNote} />
 				</div>
-				<NotesSeparator notesList={notes} removeNote={removeNote} changeColor={changeColor} pinNote={pinNote} />
+				<NotesSeparator notesList={notes} removeNote={removeNote} changeColor={changeColor} pinNote={pinNote} changeText={changeText} />
 
 			</main>
 		)
@@ -48,5 +53,5 @@ class NotesManager extends React.Component {
 
 export default connect(state => ({
 	notes: state.notesReducer,
-}), { addNote, removeNote, changeColor, pinNote })(NotesManager);
+}), { addNote, removeNote, changeColor, pinNote, changeText })(NotesManager);
 
