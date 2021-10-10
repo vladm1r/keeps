@@ -1,11 +1,15 @@
 .notes-item {
-	flex: 0 1 12.5%;
+	flex: 0 1 16.666%;
 	padding: 10px 10px;
 	list-style-type: none;
-	max-width: 12.5%;
+	max-width: 16.666%;
+	@media (max-width: 768px) {
+		max-width: 100%;
+		flex: 1 1 100%;
+	}
 }
 .notes-item-body {
-	padding: 10px 40px 40px 20px;
+	padding: 10px 40px 60px 20px;
 	border: 1px solid #1d1d1d;
 	border-radius: 8px;
 	position: relative;
@@ -33,9 +37,10 @@
 	left: 20px;
 	bottom: 10px;
 	background: url("../../assets/icons/fill.svg") center/cover no-repeat;
-	&:hover {
-		.note-color-changer {
-			opacity: 1;
-		}
-	}
+}
+
+.note-btn-pin {
+	top: 10px;
+	right: 20px;
+	background: url("../../assets/icons/pin.svg") center/cover no-repeat;
 }

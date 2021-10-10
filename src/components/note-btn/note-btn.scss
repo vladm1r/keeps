@@ -7,13 +7,20 @@
 	cursor: pointer;
 	transition: opacity 0.2s;
 	opacity: 0;
+	@media (max-width: 768px) {
+		opacity: 1;
+	}
 	&:hover,
 	&:focus {
-		.note-btn-title {
+		.note-btn-title,
+		.note-color-changer {
 			opacity: 1;
 		}
 	}
 	&:focus {
+		opacity: 1;
+	}
+	&:focus-within {
 		opacity: 1;
 	}
 }
