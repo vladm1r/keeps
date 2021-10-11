@@ -56,3 +56,16 @@ $md3: 768;
 		min-width: 100%;
 	}
 }
+
+.isDark {
+	.notes-input-textarea {
+		background: none;
+		color: rgb(232, 234, 237);
+		border: 1px solid #b8b8b8;
+	}
+	.notes-input-btn {
+		background: #414141;
+		color: rgb(232, 234, 237);
+		transition: unset;
+	}
+}

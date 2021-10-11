@@ -4,7 +4,7 @@ import NotesList from '../../components/notes-list/notes-list';
 
 import './notes-separator.scss';
 
-const NotesSeparator = ({ notesList, removeNote, changeColor, pinNote, changeText }) => {
+const NotesSeparator = ({ notesList, removeNote, changeColor, pinNote, changeText, isDark }) => {
 
 	const isNotesExist = notesList.length > 0;
 
@@ -30,7 +30,8 @@ const NotesSeparator = ({ notesList, removeNote, changeColor, pinNote, changeTex
 					removeNote={removeNote}
 					changeColor={changeColor}
 					pinNote={pinNote}
-					changeText={changeText} />}
+					changeText={changeText}
+					isDark={isDark} />}
 
 			<NotesList
 				isPinnedExist={pinnedNotesList.length}
@@ -39,7 +40,8 @@ const NotesSeparator = ({ notesList, removeNote, changeColor, pinNote, changeTex
 				removeNote={removeNote}
 				changeColor={changeColor}
 				pinNote={pinNote}
-				changeText={changeText} />
+				changeText={changeText}
+				isDark={isDark} />
 		</div>
 	)
 }

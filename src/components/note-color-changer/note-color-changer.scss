@@ -55,3 +55,23 @@
 		border: 2px solid #000;
 	}
 }
+
+.isDark {
+	.note-color-changer {
+		border: 1px solid #000;
+		background: #202124;
+	}
+	.note-color-radio {
+		border: 2px solid #414141;
+		&:hover {
+			border: 2px solid #f0f0f0;
+		}
+	}
+	.note-color-input-cont {
+		input {
+			&:checked + .note-color-radio {
+				background-image: url("../../assets/icons/check-white.svg");
+			}
+		}
+	}
+}

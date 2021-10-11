@@ -13,22 +13,18 @@ class NoteColorChanger extends React.Component {
 
 	handleChange = (e) => {
 		let id = +e.target.value;
-		// this.setState({
-		// 	value: id
-		// })
 		const { parentId } = this.state;
-		console.log(parentId, id);
 		this.props.changeColor(parentId, id);
 	}
 
 	render() {
-		const { noteId, colorId } = this.props;
+		const { noteId, colorId, isDark } = this.props;
 		return (
 			<div className="note-color-changer">
-				{COLOR_LIST.map(({ id, color }) => (
+				{COLOR_LIST.map(({ id, color, colorDark }) => (
 					<label key={id} className="note-color-input-cont">
 						<input id={id} type="radio" name={noteId + '-input'} value={id} onChange={this.handleChange} defaultChecked={colorId === id ? true : false} />
-						<div className="note-color-radio" style={{ backgroundColor: color }}></div>
+						<div className="note-color-radio" style={{ backgroundColor: isDark ? colorDark : color }}></div>
 					</label>
 				))}
 			</div>

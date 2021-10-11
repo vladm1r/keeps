@@ -4,15 +4,12 @@ import './theme-btn.scss';
 
 class ThemeBtn extends React.Component {
 
-	state = {
-
-	}
-
 	render() {
 		const className = 'theme-btn';
+		const { isDark } = this.props;
 		return (
-			<button className={className}>
-				<span className="theme-btn-title">тёмная тема</span>
+			<button onClick={(e) => this.props.changeTheme()} className={className}>
+				<span className="theme-btn-title">{isDark ? "светлая тема" : "тёмная тема"}</span>
 			</button>
 		);
 	}

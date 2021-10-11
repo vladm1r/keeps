@@ -1,5 +1,11 @@
 .main {
 	padding: 20px;
+	// height: 100%;
+	flex: auto;
+	&.isDark {
+		background: #202124;
+		color: rgba(255, 255, 255, 0.87);
+	}
 }
 
 .main-input-container {

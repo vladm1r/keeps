@@ -10,39 +10,17 @@ import './notes-manager.scss';
 
 
 class NotesManager extends React.Component {
-	state = {
-		activeFilter: 'all',
-	}
-
-	addNote = (id, text) => {
-		const { addNote } = this.props;
-		addNote(id, text);
-	}
-
-	changeColor = (id, colorId) => {
-		const { changeColor } = this.props;
-		changeColor(id, colorId);
-	}
-
-	changeColor = (id, text) => {
-		const { changeText } = this.props;
-		changeText(id, text);
-	}
-
-	pinNote = (id) => {
-		const { pinNote } = this.props;
-		pinNote(id);
-	}
 
 	render() {
-		const { notes, removeNote, changeColor, pinNote, changeText } = this.props;
+		const { notes, addNote, removeNote, changeColor, pinNote, changeText, isDark } = this.props;
+		const mainClassName = isDark ? "main isDark" : "main";
 
 		return (
-			<main className="main">
+			<main className={mainClassName}>
 				<div className="main-input-container">
-					<NotesInput addNote={this.addNote} />
+					<NotesInput addNote={addNote} />
 				</div>
-				<NotesSeparator notesList={notes} removeNote={removeNote} changeColor={changeColor} pinNote={pinNote} changeText={changeText} />
+				<NotesSeparator notesList={notes} isDark={isDark} removeNote={removeNote} changeColor={changeColor} pinNote={pinNote} changeText={changeText} />
 
 			</main>
 		)
@@ -53,5 +31,6 @@ class NotesManager extends React.Component {
 
 export default connect(state => ({
 	notes: state.notesReducer,
+	isDark: state.themeReducer[0].isDark
 }), { addNote, removeNote, changeColor, pinNote, changeText })(NotesManager);
 
