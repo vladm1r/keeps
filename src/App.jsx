@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
+import Header from './containers/header/header';
 import NotesManager from './containers/notes-manager/notes-manager';
 
 class App extends React.Component {
 
 	render() {
 		return (
-			<NotesManager />
+			<>
+				<Header />
+				<NotesManager />
+			</>
 		)
 	}
 }
