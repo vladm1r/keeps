@@ -8,7 +8,6 @@
 	transition: opacity 0.2s;
 	opacity: 0;
 	@media (max-width: 768px) {
-		opacity: 1;
 	}
 	&:hover,
 	&:focus {
@@ -39,4 +38,7 @@
 	opacity: 0;
 	transition: opacity 0.2s;
 	pointer-events: none;
+	@media (max-width: 1024px) {
+		display: none;
+	}
 }

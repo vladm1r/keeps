@@ -1,11 +1,20 @@
+$md3: 768;
+
 .notes-input {
 	display: flex;
 	align-items: flex-start;
+	margin: 0px 0px 40px 0px;
+	max-width: 560px;
+	width: 100%;
+	@media (max-width: $md3+px) {
+		flex-direction: column;
+		max-width: 300px;
+	}
 }
 
 .notes-input-textarea {
 	padding: 10px 20px;
-	min-width: 400px;
+	width: 100%;
 	// border: 1px solid #000;
 	border: 0;
 	border-radius: 4px;
@@ -19,6 +28,10 @@
 	&:focus {
 		height: 100px;
 		outline: unset;
+	}
+	@media (max-width: $md3+px) {
+		margin: 0px 0px 10px 0px;
+		max-width: 300px;
 	}
 }
 
@@ -37,5 +50,9 @@
 	}
 	&:active {
 		background: #ff9f00;
+	}
+	@media (max-width: $md3+px) {
+		margin-left: auto;
+		min-width: 100%;
 	}
 }
