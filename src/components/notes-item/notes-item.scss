@@ -22,6 +22,17 @@
 		flex: 0 1 100%;
 		max-width: unset;
 	}
+	&.isActive {
+		.notes-item-body {
+			-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+			-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+			box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+		}
+		.note-btn {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
 }
 .notes-item-body {
 	padding: 10px 50px 60px 20px;
@@ -29,14 +40,6 @@
 	border-radius: 8px;
 	position: relative;
 	transition: all 0.2s;
-	&:hover {
-		-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-		-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-		box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-		.note-btn {
-			opacity: 1;
-		}
-	}
 }
 .notes-item-text {
 	font-size: 16px;

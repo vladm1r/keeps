@@ -3,13 +3,17 @@ import NoteColorChanger from '../note-color-changer/note-color-changer';
 
 import './note-btn.scss'
 
-const NoteBtn = ({ title, onClick, type, noteId, colorId, changeColor, isDark }) => {
+const NoteBtn = ({ title, onClick, type, noteId, colorId, colorChangerOn, colorChangerOff, changeColor, isDark, colorChangerIsActive }) => {
 	let className = "note-btn " + type;
 
 	if (type === "note-color-change-btn") {
 		return (
-			<button onClick={(e) => e.preventDefault} className={className}>
-				<NoteColorChanger noteId={noteId} isDark={isDark} colorId={colorId} changeColor={changeColor} />
+			<button
+				onClick={colorChangerOn}
+				onMouseOver={colorChangerOn}
+				onMouseOut={colorChangerOff}
+				className={className}>
+				<NoteColorChanger noteId={noteId} isDark={isDark} colorId={colorId} isActive={colorChangerIsActive} changeColor={changeColor} />
 				<span className="note-btn-title">{title}</span>
 			</button>
 		)

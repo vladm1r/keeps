@@ -4,7 +4,7 @@ import NotesList from '../../components/notes-list/notes-list';
 
 import './notes-separator.scss';
 
-const NotesSeparator = ({ notesList, removeNote, changeColor, pinNote, changeText, isDark }) => {
+const NotesSeparator = ({ notesList, removeNote, changeColor, pinNote, changeText, isDark, onNoteClick, focusedItemId }) => {
 
 	const isNotesExist = notesList.length > 0;
 
@@ -31,7 +31,9 @@ const NotesSeparator = ({ notesList, removeNote, changeColor, pinNote, changeTex
 					changeColor={changeColor}
 					pinNote={pinNote}
 					changeText={changeText}
-					isDark={isDark} />}
+					isDark={isDark}
+					onNoteClick={onNoteClick}
+					focusedItemId={focusedItemId} />}
 
 			<NotesList
 				isPinnedExist={pinnedNotesList.length}
@@ -41,9 +43,13 @@ const NotesSeparator = ({ notesList, removeNote, changeColor, pinNote, changeTex
 				changeColor={changeColor}
 				pinNote={pinNote}
 				changeText={changeText}
-				isDark={isDark} />
+				isDark={isDark}
+				onNoteClick={onNoteClick}
+				focusedItemId={focusedItemId} />
 		</div>
 	)
 }
+
+
 
 export default NotesSeparator;

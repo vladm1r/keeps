@@ -11,8 +11,21 @@ import './notes-manager.scss';
 
 class NotesManager extends React.Component {
 
+	state = {
+		focusedItemId: ''
+	}
+
+	onNoteClick = (id) => {
+		if (id) {
+			this.setState({
+				focusedItemId: id
+			})
+		}
+	}
+
 	render() {
 		const { notes, addNote, removeNote, changeColor, pinNote, changeText, isDark } = this.props;
+		const { focusedItemId } = this.state;
 		const mainClassName = isDark ? "main isDark" : "main";
 
 		return (
@@ -20,7 +33,15 @@ class NotesManager extends React.Component {
 				<div className="main-input-container">
 					<NotesInput addNote={addNote} />
 				</div>
-				<NotesSeparator notesList={notes} isDark={isDark} removeNote={removeNote} changeColor={changeColor} pinNote={pinNote} changeText={changeText} />
+				<NotesSeparator
+					notesList={notes}
+					isDark={isDark}
+					removeNote={removeNote}
+					changeColor={changeColor}
+					pinNote={pinNote}
+					changeText={changeText}
+					onNoteClick={this.onNoteClick}
+					focusedItemId={focusedItemId} />
 
 			</main>
 		)

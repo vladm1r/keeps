@@ -9,12 +9,12 @@
 	cursor: pointer;
 	transition: opacity 0.2s;
 	opacity: 0;
+	pointer-events: none;
 	@media (max-width: 768px) {
 	}
 	&:hover,
 	&:focus {
-		.note-btn-title,
-		.note-color-changer {
+		.note-btn-title {
 			opacity: 1;
 			pointer-events: auto;
 		}

@@ -3,7 +3,7 @@ import React from 'react'
 import NotesItem from '../notes-item/notes-item';
 import './notes-list.scss';
 
-const NotesList = ({ isPinnedExist, title, notesList, removeNote, changeColor, pinNote, changeText, isDark }) => (
+const NotesList = ({ isPinnedExist, title, notesList, removeNote, changeColor, pinNote, changeText, isDark, onNoteClick, focusedItemId }) => (
 	<div className="notes-list-container">
 		{isPinnedExist > 0 && notesList.length > 0 && <h2 className="notes-list-title">{title}</h2>}
 		<ul className="notes-list">
@@ -18,7 +18,9 @@ const NotesList = ({ isPinnedExist, title, notesList, removeNote, changeColor, p
 					changeColor={changeColor}
 					pinNote={pinNote}
 					changeText={changeText}
-					isDark={isDark} />
+					isDark={isDark}
+					onNoteClick={onNoteClick}
+					isActive={focusedItemId === id} />
 			))}
 		</ul>
 	</div>
