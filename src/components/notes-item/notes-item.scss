@@ -1,3 +1,5 @@
+@import "../../global.scss";
+
 .notes-item {
 	flex: 0 1 16.666%;
 	padding: 13px 10px;
@@ -55,6 +57,6 @@
 		border: 2px solid #414141;
 	}
 	.notes-item-text {
-		color: rgba(255, 255, 255, 0.87);
+		color: $dark-white;
 	}
 }

@@ -1,3 +1,5 @@
+@import "../../global.scss";
+
 .note-color-changer {
 	position: absolute;
 	display: flex;
@@ -59,7 +61,7 @@
 .isDark {
 	.note-color-changer {
 		border: 1px solid #000;
-		background: #202124;
+		background: $darkbg;
 	}
 	.note-color-radio {
 		border: 2px solid #414141;

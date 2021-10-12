@@ -1,11 +1,13 @@
+@import "../../global.scss";
+
 .header {
 	padding: 10px 20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	transition: background 0.2s;
 	&.isDark {
-		background: #202124;
-		color: rgba(255, 255, 255, 0.87);
+		background: $darkbg;
+		color: $dark-white;
 	}
-	// border-bottom: 1px solid #dadce0;
 }
