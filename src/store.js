@@ -29,8 +29,6 @@ const loadFromLocalStorage = () => {
 
 const persistedStore = loadFromLocalStorage();
 
-const { notesReducer, themeReducer } = persistedStore;
-
 const configureStore = preloadedState => (
 	createStore(
 		rootReducer,
@@ -39,7 +37,14 @@ const configureStore = preloadedState => (
 	)
 );
 
-const store = configureStore({ notesReducer, themeReducer });
+
+if (persistedStore) {
+	const { notesReducer, themeReducer } = persistedStore;
+	var store = configureStore({ notesReducer, themeReducer });
+} else {
+	var store = configureStore({});
+}
+
 
 store.subscribe(() => {
 	saveToLocalStorage(store.getState());

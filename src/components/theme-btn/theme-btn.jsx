@@ -1,18 +1,26 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import './theme-btn.scss';
 
-class ThemeBtn extends React.Component {
+const ThemeBtn = ({ isDark, changeTheme }) => {
 
-	render() {
-		const className = 'theme-btn';
-		const { isDark } = this.props;
-		return (
-			<button onClick={(e) => this.props.changeTheme()} className={className}>
-				<span className="theme-btn-title">{isDark ? "светлая тема" : "тёмная тема"}</span>
-			</button>
-		);
-	}
+	const className = 'theme-btn';
+	return (
+		<button onClick={() => changeTheme()} className={className}>
+			<span className="theme-btn-title">{isDark ? "светлая тема" : "тёмная тема"}</span>
+		</button>
+	);
+}
+
+ThemeBtn.propTypes = {
+	isDark: PropTypes.bool,
+	changeTheme: PropTypes.func,
+}
+
+ThemeBtn.defaultProps = {
+	isDark: false,
+	changeTheme: () => { },
 }
 
 export default ThemeBtn;

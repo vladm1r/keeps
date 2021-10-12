@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import './logo.scss'
 import logoIcon from '../../assets/logo.png';
@@ -11,5 +12,14 @@ const Logo = ({ title }) => {
 		</div>
 	)
 }
+
+Logo.propTypes = {
+	title: PropTypes.string,
+}
+
+Logo.defaultProps = {
+	title: '',
+}
+
 
 export default Logo

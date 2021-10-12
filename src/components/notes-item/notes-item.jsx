@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import autosize from 'autosize';
 import { COLOR_LIST } from '../../constants';
 import NoteBtn from '../note-btn/note-btn';
@@ -86,6 +87,27 @@ class NotesItem extends React.Component {
 	}
 }
 
+NotesItem.propTypes = {
+	id: PropTypes.string.isRequired,
+	text: PropTypes.string,
+	colorId: PropTypes.number,
+	isPinned: PropTypes.bool,
+	isDark: PropTypes.bool,
+	isActive: PropTypes.bool,
+	changeColor: PropTypes.func,
+	changeText: PropTypes.func,
+	onNoteClick: PropTypes.func,
+}
 
+NotesItem.defaultProps = {
+	text: '',
+	colorId: 1,
+	isPinned: false,
+	isDark: false,
+	isActive: false,
+	changeColor: () => { },
+	changeText: () => { },
+	onNoteClick: () => { },
+}
 
 export default NotesItem;

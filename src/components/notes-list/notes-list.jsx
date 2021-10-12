@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes, { array } from 'prop-types';
 import NotesItem from '../notes-item/notes-item';
 import './notes-list.scss';
 
@@ -25,5 +25,32 @@ const NotesList = ({ isPinnedExist, title, notesList, removeNote, changeColor, p
 		</ul>
 	</div>
 );
+
+NotesList.propTypes = {
+	isPinnedExist: PropTypes.number,
+	title: PropTypes.string,
+	notesList: array,
+	isDark: PropTypes.bool,
+	focusedItemId: PropTypes.string,
+	changeColor: PropTypes.func,
+	changeText: PropTypes.func,
+	removeNote: PropTypes.func,
+	pinNote: PropTypes.func,
+	onNoteClick: PropTypes.func,
+}
+
+NotesList.defaultProps = {
+	isPinnedExist: 0,
+	title: '',
+	notesList: [],
+	isDark: false,
+	focusedItemId: '',
+	changeColor: () => { },
+	changeText: () => { },
+	removeNote: () => { },
+	pinNote: () => { },
+	onNoteClick: () => { },
+}
+
 
 export default NotesList;

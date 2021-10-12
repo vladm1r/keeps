@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes, { array } from 'prop-types';
 import NotesList from '../../components/notes-list/notes-list';
 
 import './notes-separator.scss';
@@ -50,6 +50,25 @@ const NotesSeparator = ({ notesList, removeNote, changeColor, pinNote, changeTex
 	)
 }
 
+NotesSeparator.propTypes = {
+	notesList: array,
+	isDark: PropTypes.bool,
+	focusedItemId: PropTypes.string,
+	changeColor: PropTypes.func,
+	changeText: PropTypes.func,
+	removeNote: PropTypes.func,
+	pinNote: PropTypes.func,
+	onNoteClick: PropTypes.func,
+}
 
-
+NotesSeparator.defaultProps = {
+	notesList: [],
+	isDark: false,
+	focusedItemId: '',
+	changeColor: () => { },
+	changeText: () => { },
+	removeNote: () => { },
+	pinNote: () => { },
+	onNoteClick: () => { },
+}
 export default NotesSeparator;

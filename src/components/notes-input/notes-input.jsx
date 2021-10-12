@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './notes-input.scss';
 
@@ -39,6 +40,14 @@ class NotesInput extends React.Component {
 			</div>
 		)
 	}
+}
+
+NotesInput.propTypes = {
+	addNote: PropTypes.func,
+}
+
+NotesInput.defaultProps = {
+	addNote: () => { },
 }
 
 export default NotesInput;

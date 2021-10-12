@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { COLOR_LIST } from '../../constants';
 import './note-color-changer.scss';
 
@@ -33,6 +34,21 @@ class NoteColorChanger extends React.Component {
 	}
 };
 
+NoteColorChanger.propTypes = {
+	noteId: PropTypes.string,
+	colorId: PropTypes.number,
+	isDark: PropTypes.bool,
+	isActive: PropTypes.bool,
+	changeColor: PropTypes.func,
+}
+
+NoteColorChanger.defaultProps = {
+	noteId: '',
+	colorId: 1,
+	isDark: false,
+	isActive: false,
+	changeColor: () => { },
+}
 
 
 export default NoteColorChanger;
