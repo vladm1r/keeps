@@ -37,12 +37,13 @@ const configureStore = preloadedState => (
 	)
 );
 
+let store;
 
 if (persistedStore) {
 	const { notesReducer, themeReducer } = persistedStore;
-	var store = configureStore({ notesReducer, themeReducer });
+	store = configureStore({ notesReducer, themeReducer });
 } else {
-	var store = configureStore({});
+	store = configureStore({});
 }
 
 
